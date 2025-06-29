@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>demoHibernate</groupId>
+	<artifactId>demoHibernate</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		
+		 <!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.13.2</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- Hibernate 4.3.6 Final -->
+		<!--<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>-->
+			<!--<version>4.3.6.Final</version>-->
+			<!--<version>5.0.0.Final</version>-->
+			<!--<version>5.6.0.Final</version>-->
+			<!--<version>5.6.15.Final</version>-->
+		<!--</dependency>-->
+		
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-c3p0</artifactId>
+		    <version>5.6.0.Final</version>
+		</dependency>
+		
+		<!-- กรณีใช้ version 6 ขึ้นไป -->
+		<!--<dependency>  
+		  <groupId>org.hibernate.orm</groupId>
+		  <artifactId>hibernate-community-dialects</artifactId>
+		</dependency>-->
+		
+		<!-- ตัวช่วย validate ข้อมูล -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>5.4.3.Final</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>2.0.1.Final</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.glassfish</groupId>
+		  <artifactId>javax.el</artifactId>
+		  <version>3.0.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>javax.el</groupId>
+		  <artifactId>javax.el-api</artifactId>
+		  <version>3.0.0</version>
+		</dependency>
+		<!-- end ตัวช่วย validate ข้อมูล -->
+		
+		<!-- https://mvnrepository.com/artifact/org.firebirdsql.jdbc/jaybird -->
+		<dependency>
+		    <groupId>org.firebirdsql.jdbc</groupId>
+		    <artifactId>jaybird</artifactId>
+		    <version>5.0.5.java11</version>
+		    <scope>provided</scope>
+		</dependency>
+
+		<!-- สำหรับ scan class โดยฟังก์ชั่น findAllClassesUsingReflectionsLibrary  -->
+		<!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
+		<dependency>
+		    <groupId>org.reflections</groupId>
+		    <artifactId>reflections</artifactId>
+		    <version>0.9.12</version>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.projectlombok</groupId>
+		   <artifactId>lombok</artifactId>
+		   <version>1.18.4</version>
+		   <scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>17</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

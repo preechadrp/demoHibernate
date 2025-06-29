@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<!--
+ชื่อ hibernate.cfg.xml เป็นชื่อค่าเริ่มต้นที่ระบบจะใช้เราสามารถ custom เป็นชื่อได้
+แต่เราก็ต้องแก้ code ตอน build session เอง เช่น
+ SessionFactory sessionFactory = new Configuration().configure("hibernate-dev.cfg.xml").buildSessionFactory();
+เป็นต้น
+
+ตัวอย่างอื่นๆ ดูจาก 
+https://javabydeveloper.com/hibernate-5-example-with-different-configurations/
+https://stackoverflow.com/questions/2067526/hibernate-connection-pool
+https://www.digitalocean.com/community/tutorials/hibernate-sessionfactory
+ -->        
+
+<hibernate-configuration>
+	<session-factory>
+	
+		<!-- Database Connection Settings -->
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+		<!-- 
+		<property name="hibernate.dialect">org.hibernate.dialect.MariaDB102Dialect </property>
+		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mariadb://localhost:8094/tutorialDb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">a1234</property> 
+		-->
+		
+	    <property name="hibernate.connection.driver_class">org.firebirdsql.jdbc.FBDriver</property>
+	    <property name="hibernate.connection.url">jdbc:firebird://localhost:3050/E:/javaDemo1/TESTHIBERNET.FDB?encoding=UTF8</property>
+	    <property name="hibernate.connection.username">SYSDBA</property>
+	    <property name="hibernate.connection.password">masterkey</property>
+
+		<!-- Specifying Session Context -->
+		<!-- ดูเพิ่มเติม https://docs.jboss.org/hibernate/stable/core.old/reference/en/html/architecture-current-session.html -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- 
+		hbm2ddl.auto มีให้เลือกดังนี้
+		validate: ตรวจสอบว่า Schema ของฐานข้อมูลตรงกับ Entity mapping ใน Hibernate หรือไม่ หากไม่ตรงจะเกิด Error
+		update: อัปเดต Schema ของฐานข้อมูลให้ตรงกับ Entity mapping ใน Hibernate โดยไม่ทำให้ข้อมูลเดิมหาย
+		create: สร้าง Schema ใหม่ทุกครั้งที่ SessionFactory ถูกสร้างขึ้น และข้อมูลเดิมจะถูกลบทิ้ง
+		create-drop: เหมือน create แต่จะลบ Schema ทิ้งเมื่อ SessionFactory ถูกปิด
+		none: ปิดการทำงานของ feature นี้
+		 -->
+		<!-- use 'create' to Create tables on application startup else use 'update'-->
+      	<property name="hibernate.hbm2ddl.auto">update</property>
+      	<!-- <property name="hibernate.hbm2ddl.auto">create</property>  -->
+
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<!--  <property name="hibernate.dialect">org.hibernate.community.dialect.FirebirdDialect</property> -->
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.validate">1800</property>
+		
+		<property name="hibernate.show_sql">true</property>
+		<!-- <property name="hibernate.format_sql">true</property> -->
+				
+		<!-- Mapping With Model Class Containing Annotations -->
+		<!-- <mapping class="com.jcg.hibernate.maven.model.User"  /> --> 
+	</session-factory>
+</hibernate-configuration>
