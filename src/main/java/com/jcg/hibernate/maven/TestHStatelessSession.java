@@ -25,8 +25,6 @@ public class TestHStatelessSession {
 		// ทดสอบทำเป็น class เอง
 		System.out.println("======testInsert()");
 		
-
-		
 		// ทดสอบ insert
 		try (HStatelessSession hss = HStatelessSession.sessionDb();) {
 			hss.begintrans();

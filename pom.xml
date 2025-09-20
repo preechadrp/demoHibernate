@@ -21,7 +21,7 @@
 		    <version>5.6.0.Final</version>
 		</dependency>
 		
-		<!-- กรณีใช้ version 6 ขึ้นไป -->
+		<!-- กรณีใช้ hibernate version 6 ขึ้นไปต้องเพิ่มเพื่อให้รองรับ  Firebird -->
 		<!--<dependency>  
 		  <groupId>org.hibernate.orm</groupId>
 		  <artifactId>hibernate-community-dialects</artifactId>
