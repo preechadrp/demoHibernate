@@ -29,7 +29,7 @@ https://www.digitalocean.com/community/tutorials/hibernate-sessionfactory
 		-->
 		
 	    <property name="hibernate.connection.driver_class">org.firebirdsql.jdbc.FBDriver</property>
-	    <property name="hibernate.connection.url">jdbc:firebird://localhost:3050/E:/javaDemo1/TESTHIBERNET.FDB?encoding=UTF8</property>
+	    <property name="hibernate.connection.url">jdbc:firebird://localhost:3050/D:/javaDemo1/TESTHIBERNET.FDB?encoding=UTF8</property>
 	    <property name="hibernate.connection.username">SYSDBA</property>
 	    <property name="hibernate.connection.password">masterkey</property>
 
@@ -49,8 +49,11 @@ https://www.digitalocean.com/community/tutorials/hibernate-sessionfactory
       	<property name="hibernate.hbm2ddl.auto">update</property>
       	<!-- <property name="hibernate.hbm2ddl.auto">create</property>  -->
 
+		<!-- กรณีใช้ hibernate 5.x  -->
 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
-		<!--  <property name="hibernate.dialect">org.hibernate.community.dialect.FirebirdDialect</property> -->
+		<!-- กรณีใช้ hibernate 6.x  -->
+		<!-- <property name="hibernate.dialect">org.hibernate.community.dialect.FirebirdDialect</property>-->
+		
 		<property name="hibernate.c3p0.min_size">1</property>
 		<property name="hibernate.c3p0.max_size">20</property>
 		<property name="hibernate.c3p0.acquire_increment">1</property>

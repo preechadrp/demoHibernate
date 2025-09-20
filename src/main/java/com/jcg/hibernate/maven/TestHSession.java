@@ -1,14 +1,11 @@
 package com.jcg.hibernate.maven;
 
-import java.util.Date;
-import java.util.List;
 import java.util.stream.Stream;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
 
@@ -39,7 +36,7 @@ public class TestHSession {
 				userObj.setUserid(i);
 				userObj.setUsername("Editor " + i);
 				userObj.setCreatedBy("Administrator");
-				userObj.setCreatedDate(new Date());
+				userObj.setCreatedDate(java.time.LocalDateTime.now());
 
 				sessionObj.save(userObj);
 			}
@@ -72,7 +69,7 @@ public class TestHSession {
 				userObj.setUserid(i);
 				userObj.setUsername("Editor " + i);
 				userObj.setCreatedBy("Administrator");
-				userObj.setCreatedDate(new Date());
+				userObj.setCreatedDate(java.time.LocalDateTime.now());
 
 				hss.persist(userObj);
 			}

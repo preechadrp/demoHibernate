@@ -1,14 +1,13 @@
 package com.jcg.hibernate.maven;
 
-import java.util.Date;
-import java.util.stream.Stream;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import javax.persistence.Tuple;
+import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import javax.validation.ConstraintViolation;
 
 import org.hibernate.ScrollMode;
 import org.hibernate.ScrollableResults;
@@ -41,7 +40,7 @@ public class TestHStatelessSession {
 						.setUserid(i)
 						.setUsername("Editor " + i)
 						.setCreatedBy("Administrator")
-						.setCreatedDate(new Date());
+						.setCreatedDate(java.time.LocalDateTime.now());
 
 				// ตรวจสอบวัตถุ
 		        Set<ConstraintViolation<User>> violations = validator.validate(userObj);

@@ -1,7 +1,5 @@
 package com.jcg.hibernate.maven.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -36,6 +34,6 @@ public class User  {
 	private String createdBy;
 
 	@Column(name = "created_date")
-	private Date createdDate;
+	private java.time.LocalDateTime createdDate;
 	
 }
