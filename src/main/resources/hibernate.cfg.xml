@@ -47,7 +47,7 @@ https://www.digitalocean.com/community/tutorials/hibernate-sessionfactory
 		 -->
 		<!-- use 'create' to Create tables on application startup else use 'update'-->
       	<property name="hibernate.hbm2ddl.auto">update</property>
-      	<!-- <property name="hibernate.hbm2ddl.auto">create</property>  -->
+       	<!--<property name="hibernate.hbm2ddl.auto">create</property>-->
 
 		<!-- กำหนด connection pool  -->
 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>

@@ -34,6 +34,6 @@ public class User  {
 	private String createdBy;
 
 	@Column(name = "created_date")
-	private java.time.LocalDateTime createdDate;
+	private java.time.OffsetDateTime createdDate;
 	
 }

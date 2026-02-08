@@ -36,7 +36,7 @@ public class TestHSession {
 				userObj.setUserid(i);
 				userObj.setUsername("Editor " + i);
 				userObj.setCreatedBy("Administrator");
-				userObj.setCreatedDate(java.time.LocalDateTime.now());
+				userObj.setCreatedDate(java.time.OffsetDateTime.now());
 
 				sessionObj.save(userObj);
 			}
@@ -69,7 +69,7 @@ public class TestHSession {
 				userObj.setUserid(i);
 				userObj.setUsername("Editor " + i);
 				userObj.setCreatedBy("Administrator");
-				userObj.setCreatedDate(java.time.LocalDateTime.now());
+				userObj.setCreatedDate(java.time.OffsetDateTime.now());
 
 				hss.persist(userObj);
 			}

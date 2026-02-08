@@ -38,7 +38,7 @@ public class TestHStatelessSession {
 						.setUserid(i)
 						.setUsername("Editor " + i)
 						.setCreatedBy("Administrator")
-						.setCreatedDate(java.time.LocalDateTime.now());
+						.setCreatedDate(java.time.OffsetDateTime.now());
 
 				// ตรวจสอบวัตถุ
 		        Set<ConstraintViolation<User>> violations = validator.validate(userObj);
