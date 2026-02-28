@@ -37,6 +37,7 @@ public class TestHStatelessSession {
 				User userObj = new User()
 						.setUserid(i)
 						.setUsername("Editor " + i)
+						.setBirthDay(java.time.LocalDate.now())
 						.setCreatedBy("Administrator")
 						.setCreatedDate(java.time.OffsetDateTime.now());
 

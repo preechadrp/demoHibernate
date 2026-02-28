@@ -149,6 +149,7 @@ public class HStatelessSession implements AutoCloseable {
 	public HStatelessSession() {
 		// Locale.setDefault(Locale.ENGLISH);//สำคัญมาก ช่วยแก้ปัญหาเรื่อง
 		// Preparestatment (setDate, setTimestamp)
+		// แต่ไม่มีผลถ้าใช้ hibernate ที่ฟิลด์วันที่ใช้ java.time.LocalDate และ java.time.OffsetDateTime  (test 28/02/2026)
 		if (Locale.getDefault() != Locale.ENGLISH) {
 			Locale.setDefault(Locale.ENGLISH);
 		}

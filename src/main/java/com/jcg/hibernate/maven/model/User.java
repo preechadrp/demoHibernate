@@ -29,6 +29,9 @@ public class User  {
 	@Column(name = "user_name", length = 255)
 	@Length(min = 1, max = 255, message = "ความยาวของชื่อสุดท้ายต้องอยู่ระหว่าง 1 ถึง 255 ตัวอักษร")
 	private String username;
+	
+	@Column(name = "birth_day")
+	private java.time.LocalDate birthDay;
 
 	@Column(name = "created_by")
 	private String createdBy;
